@@ -1,0 +1,26 @@
+<?php
+
+function greeting_menu(){                   // function name starts with name of module
+  $items = array();
+  $items['hello_friend'] = array(           // hello_friend is the url used to access module
+    'title' => 'Hello Friend!',
+    'page callback' => 'say_hello',         // what happens when the page loads (the function say_hello is called)
+    'access callback' => TRUE,              // this means that all users can access the url
+    'type' => MENU_NORMAL_ITEM,
+  );
+  $items['goodbye'] = array(           // hello_friend is the url used to access module
+    'title' => 'Goodbye!',
+    'page callback' => 'say_goodbye',         // what happens when the page loads (the function say_hello is called)
+    'access callback' => TRUE,              // this means that all users can access the url
+    'type' => MENU_NORMAL_ITEM,
+  );
+  return $items;
+}
+
+function say_hello(){
+  return '<p>Hello big boy</p>';
+}
+
+function say_goodbye(){
+  return '<p>Goodbye fella</p>';
+}
